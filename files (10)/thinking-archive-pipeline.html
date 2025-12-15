@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thinking Archive Pipeline</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght=300;400;500&family=IBM+Plex+Mono:wght=300;400&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: #fafafa;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    
+    .diagram-container {
+      width: 100%;
+      max-width: 960px;
+    }
+    
+    .diagram-title {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+    
+    .pipeline {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      padding: 2rem;
+    }
+    
+    /* Pipeline stages */
+    .stages {
+      display: flex;
+      gap: 0;
+      position: relative;
+    }
+    
+    .stage {
+      flex: 1;
+      position: relative;
+    }
+    
+    .stage-box {
+      border: 1px solid #1a1a1a;
+      padding: 1rem 0.75rem;
+      background: #fff;
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .stage:not(:last-child) .stage-box {
+      border-right: none;
+    }
+    
+    .stage-number {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.55rem;
+      color: #999;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stage-name {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+    
+    .stage-items {
+      list-style: none;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.55rem;
+      color: #666;
+      line-height: 1.8;
+    }
+    
+    .stage-items li::before {
+      content: "—";
+      margin-right: 0.35rem;
+      color: #ccc;
+    }
+    
+    /* Arrow between stages */
+    .stage:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -0.35rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.8rem;
+      color: #ccc;
+      z-index: 10;
+      background: #fff;
+      padding: 0.25rem 0;
+    }
+    
+    /* Feedback loop */
+    .feedback-loop {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px dashed #ddd;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .feedback-arrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      color: #999;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .feedback-arrow svg {
+      width: 100%;
+      max-width: 600px;
+      height: 20px;
+    }
+    
+    .feedback-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.55rem;
+      color: #666;
+      white-space: nowrap;
+    }
+    
+    /* Caption */
+    .diagram-caption {
+      margin-top: 1rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      color: #666;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="diagram-container">
+    <div class="diagram-title">Figure 2 — Thinking Archive Pipeline</div>
+    
+    <div class="pipeline">
+      <div class="stages">
+        <div class="stage">
+          <div class="stage-box">
+            <div class="stage-number">01</div>
+            <div class="stage-name">Grounded Data</div>
+            <ul class="stage-items">
+              <li>motion capture</li>
+              <li>sonic recording</li>
+              <li>oral history</li>
+              <li>geospatial layers</li>
+              <li>migration records</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="stage">
+          <div class="stage-box">
+            <div class="stage-number">02</div>
+            <div class="stage-name">Structured Encoding</div>
+            <ul class="stage-items">
+              <li>QTC matrices</li>
+              <li>SAM sequences</li>
+              <li>pose vectors</li>
+              <li>sonic features</li>
+              <li>PPC metadata</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="stage">
+          <div class="stage-box">
+            <div class="stage-number">03</div>
+            <div class="stage-name">AEI Processing</div>
+            <ul class="stage-items">
+              <li>analyzer agent</li>
+              <li>interpreter agent</li>
+              <li>custodian review</li>
+              <li>pattern clustering</li>
+              <li>diffusion mapping</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="stage">
+          <div class="stage-box">
+            <div class="stage-number">04</div>
+            <div class="stage-name">Ethics Loop</div>
+            <ul class="stage-items">
+              <li>consent check</li>
+              <li>access filtering</li>
+              <li>community review</li>
+              <li>redaction/revision</li>
+              <li>retraining flags</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="stage">
+          <div class="stage-box">
+            <div class="stage-number">05</div>
+            <div class="stage-name">Dissemination</div>
+            <ul class="stage-items">
+              <li>StoryMaps</li>
+              <li>visualizations</li>
+              <li>platform interface</li>
+              <li>pedagogical tools</li>
+              <li>community return</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Feedback loop -->
+      <div class="feedback-loop">
+        <div class="feedback-label">recursive loop</div>
+        <div class="feedback-arrow">
+          <svg viewBox="0 0 600 20" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                <polygon points="0 0, 6 3, 0 6" fill="#999"/>
+              </marker>
+            </defs>
+            <path d="M 0 10 L 580 10" stroke="#ccc" stroke-width="1" stroke-dasharray="4 2" fill="none" marker-end="url(#arrowhead)"/>
+          </svg>
+        </div>
+        <div class="feedback-label">← community feedback reshapes training</div>
+      </div>
+    </div>
+    
+    <div class="diagram-caption">
+      The pipeline moves from grounded data through encoding, AI processing, and ethical review before reaching dissemination. A recursive loop ensures that community feedback, corrections, and withdrawals reshape how the system learns. Every output passes through the Custodian before release.
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AEI Activation Framework</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght=300;400;500&family=IBM+Plex+Mono:wght=300;400&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: #fafafa;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    
+    .diagram-container {
+      width: 100%;
+      max-width: 800px;
+    }
+    
+    .diagram-title {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+    
+    .framework {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      padding: 2rem;
+    }
+    
+    /* Grid of 4 dimensions */
+    .dimensions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: #1a1a1a;
+      border: 1px solid #1a1a1a;
+    }
+    
+    .dimension {
+      background: #fff;
+      padding: 1.5rem;
+    }
+    
+    .dimension-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .dimension-number {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.5rem;
+      color: #999;
+    }
+    
+    .dimension-name {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    
+    .dimension-desc {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    
+    .dimension-examples {
+      border-top: 1px solid #eee;
+      padding-top: 0.75rem;
+    }
+    
+    .example-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.5rem;
+      color: #999;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+    
+    .example-item {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.55rem;
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    .example-item::before {
+      content: "→ ";
+      color: #ccc;
+    }
+    
+    /* Center label */
+    .center-label {
+      position: relative;
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+    
+    .center-label::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: #ddd;
+    }
+    
+    .center-label span {
+      position: relative;
+      background: #fff;
+      padding: 0 1rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.55rem;
+      color: #999;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    
+    /* Caption */
+    .diagram-caption {
+      margin-top: 1rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    @media (max-width: 600px) {
+      .dimensions-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="diagram-container">
+    <div class="diagram-title">Figure 4 — AEI Activation Framework (AAF)</div>
+    
+    <div class="framework">
+      <div class="dimensions-grid">
+        <div class="dimension">
+          <div class="dimension-header">
+            <span class="dimension-number">01</span>
+            <span class="dimension-name">Reconstructive</span>
+          </div>
+          <div class="dimension-desc">
+            Uses stored movement data to resurrect extinct or endangered dances. QTC, SAM, and generative models infer missing transitions while respecting stylistic integrity.
+          </div>
+          <div class="dimension-examples">
+            <div class="example-label">Example</div>
+            <div class="example-item">Reconstruct lost Efik initiation dances by aligning surviving sequences with related forms</div>
+          </div>
+        </div>
+        
+        <div class="dimension">
+          <div class="dimension-header">
+            <span class="dimension-number">02</span>
+            <span class="dimension-name">Diagnostic</span>
+          </div>
+          <div class="dimension-desc">
+            Treats movement as a window into physiological and psychological states. Correlates movement qualities with patterns of fatigue, injury, or emotional state.
+          </div>
+          <div class="dimension-examples">
+            <div class="example-label">Example</div>
+            <div class="example-item">Detect early signs of neurological conditions through balance, rhythm, and symmetry changes</div>
+          </div>
+        </div>
+        
+        <div class="dimension">
+          <div class="dimension-header">
+            <span class="dimension-number">03</span>
+            <span class="dimension-name">Cybernetic</span>
+          </div>
+          <div class="dimension-desc">
+            Uses movement as biometric signature. Kinetic profiles can authenticate identity, serve as authorship marks, or function as embodied encryption.
+          </div>
+          <div class="dimension-examples">
+            <div class="example-label">Example</div>
+            <div class="example-item">A choreographer's movement phrase operates as kinesthetic password or licensing signature</div>
+          </div>
+        </div>
+        
+        <div class="dimension">
+          <div class="dimension-header">
+            <span class="dimension-number">04</span>
+            <span class="dimension-name">Speculative</span>
+          </div>
+          <div class="dimension-desc">
+            Explores how dances might evolve in future ecologies where humans, machines, and environments co-create. Ethics and imagination must be co-designed.
+          </div>
+          <div class="dimension-examples">
+            <div class="example-label">Example</div>
+            <div class="example-item">Simulate how a step adapts across ages, climates, or post-anthropocentric conditions</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="center-label">
+        <span>all dimensions governed by PPC ethics + custodian review</span>
+      </div>
+    </div>
+    
+    <div class="diagram-caption">
+      The AEI Activation Framework organizes how archived movement can be activated beyond storage. Each dimension carries distinct ethical stakes—reconstructive work requires community authority; diagnostic use demands consent and care; cybernetic applications must resist surveillance; speculative modeling must acknowledge uncertainty.
+    </div>
+  </div>
+</body>
+</html>

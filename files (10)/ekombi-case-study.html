@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study: Ekombi Through the Thinking Archive</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght=300;400;500&family=IBM+Plex+Mono:wght=300;400&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: #fafafa;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    
+    .diagram-container {
+      width: 100%;
+      max-width: 900px;
+    }
+    
+    .diagram-title {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+    
+    .diagram-subtitle {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      color: #999;
+      margin-bottom: 1.5rem;
+    }
+    
+    .flowchart {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      padding: 2rem;
+    }
+    
+    /* Row structure */
+    .flow-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .flow-row:last-child {
+      margin-bottom: 0;
+    }
+    
+    /* Nodes */
+    .node {
+      padding: 0.6rem 1rem;
+      border: 1px solid #1a1a1a;
+      background: #fff;
+      text-align: center;
+      min-width: 100px;
+    }
+    
+    .node-primary {
+      background: #1a1a1a;
+      color: #fff;
+    }
+    
+    .node-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    
+    .node-sublabel {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.5rem;
+      color: #999;
+      margin-top: 0.2rem;
+    }
+    
+    .node-primary .node-sublabel {
+      color: #999;
+    }
+    
+    /* Arrows */
+    .arrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      color: #ccc;
+      padding: 0 0.75rem;
+    }
+    
+    .arrow-down {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.5rem 0;
+      color: #ccc;
+      font-size: 0.7rem;
+    }
+    
+    /* Section labels */
+    .section-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.5rem;
+      color: #999;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      padding-left: 0.25rem;
+      border-left: 2px solid #ddd;
+    }
+    
+    /* Branching */
+    .branch-container {
+      display: flex;
+      gap: 1rem;
+      margin-left: 2rem;
+    }
+    
+    .branch {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    /* Output section */
+    .outputs {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px dashed #ddd;
+    }
+    
+    .output-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+    }
+    
+    .output-item {
+      padding: 0.5rem;
+      border: 1px solid #e0e0e0;
+      background: #fafafa;
+      text-align: center;
+    }
+    
+    .output-item .node-label {
+      font-size: 0.55rem;
+      font-weight: 400;
+    }
+    
+    /* Caption */
+    .diagram-caption {
+      margin-top: 1rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    /* Responsive */
+    @media (max-width: 700px) {
+      .output-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .flow-row {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      
+      .branch-container {
+        flex-direction: column;
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="diagram-container">
+    <div class="diagram-title">Figure 3 — Case Study: Ekombi Through the Thinking Archive</div>
+    <div class="diagram-subtitle">Efik/Ibibio dance from Cross River and Akwa Ibom, Nigeria</div>
+    
+    <div class="flowchart">
+      <!-- Input phase -->
+      <div class="section-label">Input</div>
+      <div class="flow-row">
+        <div class="node node-primary">
+          <div class="node-label">Ekombi</div>
+          <div class="node-sublabel">community practice</div>
+        </div>
+        <span class="arrow">→</span>
+        <div class="node">
+          <div class="node-label">Fieldwork</div>
+          <div class="node-sublabel">video, mocap, oral history</div>
+        </div>
+        <span class="arrow">→</span>
+        <div class="node">
+          <div class="node-label">Motion Archive</div>
+          <div class="node-sublabel">raw traces + PPC</div>
+        </div>
+      </div>
+      
+      <!-- Processing phase -->
+      <div class="arrow-down">↓</div>
+      <div class="section-label">Analysis</div>
+      <div class="flow-row">
+        <div class="node">
+          <div class="node-label">QTC Agent</div>
+          <div class="node-sublabel">hip-torso-arm relations</div>
+        </div>
+        <span class="arrow">→</span>
+        <div class="node">
+          <div class="node-label">SAM Agent</div>
+          <div class="node-sublabel">cross-recording alignment</div>
+        </div>
+        <span class="arrow">→</span>
+        <div class="node">
+          <div class="node-label">ACF Agent</div>
+          <div class="node-sublabel">Gulf of Guinea confluence</div>
+        </div>
+      </div>
+      
+      <!-- Branching -->
+      <div class="arrow-down">↓</div>
+      <div class="section-label">Interpretation + Comparison</div>
+      <div class="flow-row">
+        <div class="branch-container">
+          <div class="node">
+            <div class="node-label">Diffusion Mapping</div>
+            <div class="node-sublabel">coastal + inland routes</div>
+          </div>
+          <div class="node">
+            <div class="node-label">Cross-Cultural</div>
+            <div class="node-sublabel">Abang, diaspora echoes</div>
+          </div>
+          <div class="node">
+            <div class="node-label">Interpreter</div>
+            <div class="node-sublabel">narrative synthesis</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Ethics + Archive -->
+      <div class="arrow-down">↓</div>
+      <div class="section-label">Ethics + Storage</div>
+      <div class="flow-row">
+        <div class="node">
+          <div class="node-label">Custodian</div>
+          <div class="node-sublabel">consent + access review</div>
+        </div>
+        <span class="arrow">→</span>
+        <div class="node node-primary">
+          <div class="node-label">Thinking Archive</div>
+          <div class="node-sublabel">node in knowledge graph</div>
+        </div>
+        <span class="arrow">→</span>
+        <div class="node">
+          <div class="node-label">Feedback Loop</div>
+          <div class="node-sublabel">community annotation</div>
+        </div>
+      </div>
+      
+      <!-- Outputs -->
+      <div class="outputs">
+        <div class="section-label">Outputs</div>
+        <div class="output-grid">
+          <div class="output-item">
+            <div class="node-label">StoryMap Layer</div>
+          </div>
+          <div class="output-item">
+            <div class="node-label">Motion Replay</div>
+          </div>
+          <div class="output-item">
+            <div class="node-label">Comparison Dashboard</div>
+          </div>
+          <div class="output-item">
+            <div class="node-label">Pedagogical Interface</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="diagram-caption">
+      Ekombi enters the archive as situated practice, passes through QTC and SAM encoding, is grounded within Atomic Confluences, compared to related Nigerian and diaspora dances, reviewed by the Custodian, and stored as a living node. Outputs include StoryMaps, motion replays, comparative dashboards, and pedagogical tools—all open to community correction.
+    </div>
+  </div>
+</body>
+</html>
